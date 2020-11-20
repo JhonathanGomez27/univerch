@@ -42,12 +42,10 @@
     <div class="col-5">
         <div class="form-group">
             <label for="facultad">Facultad</label>
-            <select class="form-control" name="facultad" id="facultad">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select class="form-control" name="facultad_id" id="facultad_id">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
             </select>
         </div>
         <div class="form-group">

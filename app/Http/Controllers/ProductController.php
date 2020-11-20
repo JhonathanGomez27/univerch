@@ -15,7 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        //Para filtar por id//->where('id', '=', '2')->paginate(10);
+        $products = Product::orderBy('created_at','desc')->paginate(10);
+        return view('dashboard.product.index',['products'=>$products]);
     }
 
     /**
@@ -60,9 +62,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        //$categories =Category::pluck('id','title');
+        return view('dashboard.product.edit',["product" => $product]);
     }
 
     /**
@@ -72,9 +75,12 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductPost $request, $id)
     {
         //
+        $post->update($request->validated());
+        return back()->with('status','Post actualizado con exito');
+    
     }
 
     /**
