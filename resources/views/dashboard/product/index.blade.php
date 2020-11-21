@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$product->title}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$product->precio}}</h6>
-                    <h6 class="card-text">Facultad {{ $product->facultad_id }}</h6>
+                    <h6 class="card-text">Facultad {{ $product->facultad->title }}</h6>
                     
                     <a href="{{route('product.show',$product->id)}}" class="btn btn-outline-primary">Mas información</a>                    
                 </div>

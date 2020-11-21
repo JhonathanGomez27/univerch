@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Facultad;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -13,5 +14,10 @@ class Product extends Model
      * Falta realizar la relación con facultades
      * y con usuario
      */
+
+     /**Un producto pertenece a una facultad */
+    public function facultad(){
+        return $this->belongsTo(Facultad::class);
+    }
     
 }

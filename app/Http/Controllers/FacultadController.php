@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Facultad;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreProductPost;
+use App\Http\Requests\StoreFacultadPost;
 
-class ProductController extends Controller
+class FacultadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +15,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //Para filtar por id//->where('id', '=', '2')->paginate(10);
-        $products = Product::orderBy('created_at','desc')->paginate(10);
-        return view('dashboard.product.index',['products'=>$products]);
+        //
+        $facultades = Facultad::orderBy('created_at','desc')->paginate(4);
+        return view('dashboard.facultad.index',['facultades'=>$facultades]);
     }
 
     /**
@@ -28,10 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
+        return view('dashboard.facultad.create',['facultad'=>new Facultad()]);
         //
-        $facultades = Facultad::pluck('id','title');
-        return view('dashboard.product.create',['product'=>new Product(),'facultades'=>$facultades]);
-  
     }
 
     /**
@@ -40,11 +37,11 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductPost $request)
+    public function store(StoreFacultadPost $request)
     {
         //
-        Product::create($request->validated());
-        return back()->with('status','Framework creado con exito');
+        Facultad::create($request->validated());
+        return back()->with('status','Facultad creada con exito');
     }
 
     /**
@@ -64,10 +61,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Facultad $facultad)
     {
-        $facultades = Facultad::pluck('id','title');
-        return view('dashboard.product.edit',['product'=> $product,'facultades',$facultades]);
+        //
+
+        return view('dashboard.facultad.edit',["facultad" => $facultad]);
     }
 
     /**
@@ -77,12 +75,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreProductPost $request,Product $product)
+    public function update(StoreFacultadPost $request, Facultad $facultad)
     {
         //
-        $product->update($request->validated());
-        return back()->with('status','Post actualizado con exito');
-    
+        $facultad->update($request->validated());
+        return back()->with('status','Facultad actualizada con exito');
     }
 
     /**
@@ -91,10 +88,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Facultad $facultad)
     {
         //
-        $product->delete();
-        return back()->with('status','Post eliminado con exito');
+        $facultad->delete();
+        return back()->with('status','Facultad eliminado con exito');
     }
 }

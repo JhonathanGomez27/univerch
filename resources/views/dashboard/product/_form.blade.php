@@ -41,11 +41,11 @@
     </div>
     <div class="col-5">
         <div class="form-group">
-            <label for="facultad">Facultad</label>
+            <label for="facultad_id">Facultad</label>
             <select class="form-control" name="facultad_id" id="facultad_id">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
+                @foreach ($facultades as $title=>$id)
+                    <option {{  $product-> facultad_id == $id ?'selected="selected"':''}}  value="{{ $id }}">{{ $title }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">

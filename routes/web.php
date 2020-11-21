@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FacultadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,17 +15,11 @@ use App\Http\Controllers\ProductController;
 |
 */
 Route::resource('dashboard/product', ProductController::class);
+Route::resource('dashboard/facultad', FacultadController::class);
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
