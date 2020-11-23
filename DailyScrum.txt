@@ -12,6 +12,10 @@ Jhonathan Gomez:
     3)Los estilos con sass no funcionan bien del todo
 
 23/11/2020
+Jhonathan Gomez:
+    1)He estado trabajando las vistas de crear productos y la vista de inicio donde se muestran todas las publicaciones hechas
+    2)Terminar las vistas de crear productos y la vista de inicio
+    3)Ningun impedimento ha surgido por el momento
 
 24/11/2020
 
