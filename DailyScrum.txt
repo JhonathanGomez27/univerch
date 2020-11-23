@@ -17,6 +17,14 @@ Jhonathan Gomez:
     2)Terminar las vistas de crear productos y la vista de inicio
     3)Ningun impedimento ha surgido por el momento
 
+    Jhon Edison  Rosero:
+    1)Modifique el modelo y controlador del producto, ahor se guarda con el usuario que lo crea, que debe ser el usuario autenticado,
+     tambien obtengo los datos del perfil de los usuarios tanto de mi perfil como usuario autenticado, como el de los vendedores
+     que tienen articulos publicados, y por ultimo hice el show product
+    2)Planeo obtener los productos publicado de cada usario, es decir cuando entre al perfil de un usuario, pueda ver solo los productos
+    publicados por  este usuario
+    3)ninguno se ha presentado hasta el momento
+
 24/11/2020
 
 25/11/2020
