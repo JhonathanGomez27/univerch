@@ -18,6 +18,7 @@ class ProductController extends Controller
     {
         //Para filtar por id//->where('id', '=', '2')->paginate(10);
         $products = Product::orderBy('created_at','desc')->paginate(10);
+
         return view('dashboard.product.index',['products'=>$products]);
     }
 
@@ -30,8 +31,10 @@ class ProductController extends Controller
     {
         //
         $facultades = Facultad::pluck('id','title');
+        //$user = auth()->id();
+        //echo($user);
         return view('dashboard.product.create',['product'=>new Product(),'facultades'=>$facultades]);
-  
+
     }
 
     /**
@@ -40,11 +43,19 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    //cambio en el metodo guardar ahora si guarda con el id del usuario para hacer la relacion
     public function store(StoreProductPost $request)
     {
+
+        $data = $request->all();
+        $data['user_id'] = auth()->id();
+        $add_product = new Product($data);
+        $add_product->save();
+        return back()->with('status','Producto creado con exito');
+
+        //Product::create($request->validated());
+        //echo($request);
         //
-        Product::create($request->validated());
-        return back()->with('status','Framework creado con exito');
     }
 
     /**
@@ -53,9 +64,20 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //Funcion ver  si el objeto existe me lo devuelve como un objeto, en las vistas se puede hacer uso de el, si no existe devulve el mensaje, creo que se puede mejorar y devolver una alerta
     public function show($id)
     {
-        //
+        $product = Product::find($id);
+        $facultades = Facultad::pluck('id','title');
+        if(is_object($product)){
+        return view('dashboard.product.show',['product'=> $product,'facultades',$facultades]);
+        }else{
+            return "Este producto no existe";
+
+        }
+
+
     }
 
     /**
@@ -81,8 +103,8 @@ class ProductController extends Controller
     {
         //
         $product->update($request->validated());
-        return back()->with('status','Post actualizado con exito');
-    
+        return back()->with('status','Producto actualizado con exito');
+
     }
 
     /**
@@ -95,6 +117,16 @@ class ProductController extends Controller
     {
         //
         $product->delete();
-        return back()->with('status','Post eliminado con exito');
+        return back()->with('status','Producto eliminado con exito');
     }
+
+    public function dataUser(Request $request){
+        $request-> user();
+        echo($request);
+
+    }
+
+
+
+
 }

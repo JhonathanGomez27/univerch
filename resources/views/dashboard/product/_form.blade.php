@@ -42,8 +42,9 @@
     <div class="col-5">
         <div class="form-group">
             <label for="facultad_id">Facultad</label>
+
             <select class="form-control" name="facultad_id" id="facultad_id">
-                @foreach ($facultades as $title=>$id)
+                @foreach ($facultades as   $title=>$id)
                     <option {{  $product-> facultad_id == $id ?'selected="selected"':''}}  value="{{ $id }}">{{ $title }}</option>
                 @endforeach
             </select>
@@ -71,4 +72,4 @@
             </div>
         </div>
     </div>
-    
+

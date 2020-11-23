@@ -20,6 +20,7 @@ class CreateProductTable extends Migration
             $table->bigInteger('precio')->nullable();
             $table->enum('estado', ['publico', 'privado'])->nullable('web');
             $table->bigInteger('facultad_id')->nullable();
+            $table->bigInteger('user_id')->nullable();
             $table->timestamps();
         });
     }

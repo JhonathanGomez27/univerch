@@ -29,6 +29,7 @@ class StoreProductPost extends FormRequest
             'precio' => 'required',
             'estado' => 'required',
             'facultad_id' =>'required',
+
         ];
     }
 }

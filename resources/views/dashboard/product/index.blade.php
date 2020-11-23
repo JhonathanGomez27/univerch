@@ -9,14 +9,24 @@
                 <div class="card-body">
                     <h5 class="card-title">{{$product->title}}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">{{$product->precio}}</h6>
-                    <h6 class="card-text">Facultad {{ $product->facultad->title }}</h6>
-                    
-                    <a href="{{route('product.show',$product->id)}}" class="btn btn-outline-primary">Mas información</a>                    
+                    <h6 class="card-text">Facultad: {{ $product->facultad->title }}</h6>
+                    <h6 class="card-text">Vendedor: {{ $product->user->name }}</h6>
+                    <a href="{{url('../../profile',$product->user->id)}}" class="btn btn-outline-primary">Perfil</a>
+                    <a href="{{route('product.show',$product->id)}}" class="btn btn-outline-primary">Mas información</a>
+                </div>
+
+
+                <div>
+
                 </div>
               </div>
         </div>
         <div class="col-2">
-        </div>     
+        </div>
     @endforeach
+
+</div>
+<div>
+    <a href="{{url('../../profile',auth()->id())}}" class="btn btn-outline-primary">Mi Perfil</a>
 </div>
 @endsection

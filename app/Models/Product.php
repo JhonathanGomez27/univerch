@@ -19,5 +19,9 @@ class Product extends Model
     public function facultad(){
         return $this->belongsTo(Facultad::class);
     }
-    
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
 }

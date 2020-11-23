@@ -1,8 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FacultadController;
+use App\Http\Controllers\profileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +16,17 @@ use App\Http\Controllers\FacultadController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('dashboard/product', ProductController::class);
-Route::resource('dashboard/facultad', FacultadController::class);
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('dashboard/product', ProductController::class)->middleware('auth');;
+//por el momento solo perfil, luego ya le cambiamos el nombre a la ruta
+Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
+Route::resource('dashboard/facultad', FacultadController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
