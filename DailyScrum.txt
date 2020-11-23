@@ -6,6 +6,10 @@ Preguntas
 
 
 20/11/2020
+Jhonathan Gomez:
+    1)He adelantado las vistas de login y registro modificadas
+    2)Planeo terminar la vista de listar productos y crear productos
+    3)Los estilos con sass no funcionan bien del todo
 
 23/11/2020
 
