@@ -17,8 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         //Para filtar por id//->where('id', '=', '2')->paginate(10);
-        $products = Product::orderBy('created_at','desc')->paginate(10);
-
+        $products = Product::orderBy('created_at','desc')->where('estado', '=', 'publico')->paginate(10);
         return view('dashboard.product.index',['products'=>$products]);
     }
 
@@ -51,13 +50,9 @@ class ProductController extends Controller
         echo($user);
         $data = $request->all();
         $data['user_id'] = auth()->id();
-        $add_product = new Product($data);
-        $add_product->save();
-        return back()->with('status','Producto creado con exito');
-
-        //Product::create($request->validated());
-        //echo($request);
-        //
+        $product = new Product($data);
+        $product->save();
+        return view('dashboard.product.add-images',['product'=> $product]);
     }
 
     /**
@@ -127,8 +122,12 @@ class ProductController extends Controller
         echo($request);
 
     }
-
-
-
-
+    public function image(Request $request,Product $product )
+    {
+        $request->validate(['image'=>'required|mimes:jpeg,bmp,png,jpeg|max:10240',]);
+        $filename=time().".".$request->image->extension();
+        $request->image->move(public_path('storage').'/images',$filename);
+        ProductImage::create(['image'=>$filename,'product_id'=>$product->id]);
+        return back()->with('status','Imagen cargada con exito');
+    }
 }

@@ -16,12 +16,11 @@
         <div class="form-group">
             <label for="precio">Precio</label>
             <div class="input-group mb-3">
-
                 <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                 </div>
                 <input type="number" class="form-control" id="precio" name="precio"
-                    aria-label="Amount (to the nearest dollar)">
+                    aria-label="Amount (to the nearest dollar)" value="{{old('content', $product->content) }}">
                 <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                 </div>
@@ -65,7 +64,7 @@
             <div class="input-group mb-2">
 
                 <div class="input-group-prepend">
-                    <a href="{{URL::previous()}}" class="btn btn-outline-secondary" >Regresar</a>
+                    <a href="{{route('product.index')}}" class="btn btn-outline-secondary" >Regresar</a>
                 </div>
                 <div class="col-2"></div>
                 <input class="btn btn-primary" type="submit" id="guardar" value="Guardar">

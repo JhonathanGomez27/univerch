@@ -26,7 +26,7 @@ Route::resource('dashboard/product', ProductController::class)->middleware('auth
 //por el momento solo perfil, luego ya le cambiamos el nombre a la ruta
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
 Route::resource('dashboard/facultad', FacultadController::class);
-
+Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 Route::get('/', function () {
     return view('welcome');
 });

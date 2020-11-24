@@ -6,7 +6,7 @@
         @foreach ($products as $product)
             <div class="col-4" style="margin-top: 45px">
                 <ul>
-                    <li class="booking-card" style="background-image: url(https://www.mayoristatecnologico.com.co/images/detailed/4/A15YAB_dell_-_tienda_maitek.jpg?t=1589739873)">
+                    <li class="booking-card" style="background-image: url({{asset('storage').'/'.'images'.'/'.$product->image->first()->image}})">
                       <div class="book-container">
                         <div class="content">
                           <button class="btn"><a href="{{route('product.show',$product->id)}}" >Mas información</a></button>

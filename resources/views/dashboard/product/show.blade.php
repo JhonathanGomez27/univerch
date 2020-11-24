@@ -11,5 +11,11 @@
 <h5 class="card-title">{{$product->facultad->title}}</h5>
 <h4>Nombre del vendedor</h4>
 <h5 class="card-title">{{$product->user->name}}</h5>
-
+<div>
+    @foreach ($product->image as $image)
+        <div class="card-body">     
+            <img src="{{asset('storage').'/'.'images'.'/'.$product->image->first()->image}}" alt="Card image cap">
+        </div>        
+    @endforeach
+</div>
 @endsection
