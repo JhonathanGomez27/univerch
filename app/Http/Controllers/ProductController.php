@@ -47,6 +47,8 @@ class ProductController extends Controller
     public function store(StoreProductPost $request)
     {
 
+        $user = auth()->id();
+        echo($user);
         $data = $request->all();
         $data['user_id'] = auth()->id();
         $add_product = new Product($data);
