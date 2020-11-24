@@ -10,6 +10,10 @@ Jhonathan Gomez:
     1)He adelantado las vistas de login y registro modificadas
     2)Planeo terminar la vista de listar productos y crear productos
     3)Los estilos con sass no funcionan bien del todo
+Yoiner Lopez:
+    1)Iniciar con el crud de productos (Modelo, controlador,migración)
+    2)Planeo terminar el crud
+    3) voy avanzando bien
 
 23/11/2020
 Jhonathan Gomez:
@@ -24,8 +28,16 @@ Jhonathan Gomez:
     2)Planeo obtener los productos publicado de cada usario, es decir cuando entre al perfil de un usuario, pueda ver solo los productos
     publicados por  este usuario
     3)ninguno se ha presentado hasta el momento
+    
+Yoiner Lopez:
+    1) Corregi una parte del formulario de creación de poductos 
+    2) Permitir que cada producto pueda tener sus propias imagenes
+    3) Ninguno se ha presentado
 
 24/11/2020
-
+Yoiner Lopez:
+    1) El crud basico de productos con imagenes
+    2) Configurar los productos para mostrar las imagenes segun la relacion
+    3) Como realizar la estraccion de imagenes, del storage
 25/11/2020
 
