@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Facultad;
+use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreProductPost;
 
@@ -122,6 +123,7 @@ class ProductController extends Controller
         echo($request);
 
     }
+
     public function image(Request $request,Product $product )
     {
         $request->validate(['image'=>'required|mimes:jpeg,bmp,png,jpeg|max:10240',]);

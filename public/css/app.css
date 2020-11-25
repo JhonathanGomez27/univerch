@@ -10,6 +10,10 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+/*
+    navbar vista
+*/
+
 .nevbar a:link {
   text-decoration: none;
 }
@@ -94,6 +98,10 @@ body {
     color: white;
   }
 }
+
+/*
+    Index vista
+*/
 
 .contenedorPublicaciones {
   width: 90%;
@@ -321,6 +329,97 @@ ul .booking-card:hover .informations-container .more-information {
 
 h1 {
   margin: 10px 20px;
+}
+
+/*
+    Form vista
+*/
+
+.form-create {
+  width: 90%;
+  padding: 30px;
+  margin: auto;
+}
+
+.form__label {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  margin-top: 0.3rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  display: block;
+  border-bottom: 0.1rem solid #d080ff;
+  transition: all 0.3s;
+}
+
+.form__input1 {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 90%;
+  display: block;
+  border-bottom: 0.1rem solid #d080ff;
+  transition: all 0.3s;
+}
+
+.form__input1:-moz-placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.form__input1:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.form__input1:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.form__input:-moz-placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.form__input:-ms-input-placeholder + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.form__input:placeholder-shown + .form__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-2rem);
+}
+
+.selec {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  border-bottom: 0.1rem solid #d080ff;
 }
 
 /*!
