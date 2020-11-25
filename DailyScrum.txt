@@ -41,3 +41,7 @@ Yoiner Lopez:
     3) Como realizar la estraccion de imagenes, del storage
 25/11/2020
 
+Jhonathan Gomez:
+    1)Hice la vista de mostrar producto
+    2)Planeo terminar la vista de mostrar perfil
+    3)Algunos estilos no se aplican correctamente
