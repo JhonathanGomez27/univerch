@@ -312,21 +312,6 @@ ul .booking-card:hover .informations-container .more-information {
   }
 }
 
-.credits {
-  display: table;
-  background: #0a4870;
-  color: white;
-  line-height: 25px;
-  margin: 10px auto;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-}
-
-.credits a {
-  color: #e3ebf1;
-}
-
 h1 {
   margin: 10px 20px;
 }
@@ -420,6 +405,16 @@ h1 {
   outline: none;
   width: 100%;
   border-bottom: 0.1rem solid #d080ff;
+}
+
+/*
+  Vista Show
+*/
+
+.form-show {
+  width: 90%;
+  padding: 30px;
+  margin: auto;
 }
 
 /*!

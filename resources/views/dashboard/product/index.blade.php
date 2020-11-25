@@ -6,7 +6,12 @@
         @foreach ($products as $product)
             <div class="col-4" style="margin-top: 45px">
                 <ul>
-                    <li class="booking-card" style="background-image: url({{asset('storage').'/'.'images'.'/'.$product->image->first()->image}})">
+
+                    @if (count($product->image) > 0)
+                        <li class="booking-card" style="background-image: url({{asset('storage').'/'.'images'.'/'.$product->image->first()->image}})">
+                    @else
+                        <li class="booking-card" style="background-image: url({{asset('storage').'/'.'images'.'/'.'productovacio.png'}})">
+                    @endif
                       <div class="book-container">
                         <div class="content">
                           <button class="btn"><a href="{{route('product.show',$product->id)}}" >Mas información</a></button>

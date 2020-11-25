@@ -355,24 +355,6 @@ ul{
   }
 }
 
-.credits{
-  display: table;
-  background: $blue;
-  color: white;
-  line-height: 25px;
-
-  margin: 10px auto;
-  padding: 20px;
-
-  @include radius(10px);
-
-  text-align: center;
-
-  a{
-    color: $blue2;
-  }
-}
-
 h1{
   margin: 10px 20px;
 }
@@ -451,4 +433,15 @@ h1{
     border-bottom: 0.1rem solid rgb(208, 128, 255);
   }
 
+
+/*
+  Vista Show
+*/
+
+.form-show{
+    width: 90%;
+    padding: 30px;
+    margin: auto;
+
+}
 

@@ -1,5 +1,5 @@
-
-<html>
+@extends('dashboard.master')
+@section('content')
 
 <body>
 
@@ -22,15 +22,7 @@
     @endif
 
 
-
-
-
-
 </body>
-</html>
-
-
-
-
+@endsection
 
 

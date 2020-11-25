@@ -64,7 +64,7 @@
                         <a href="{{route('product.index')}}" class="btn btn-outline-danger" >Regresar</a>
                     </div>
                     <div class="col-2"></div>
-                    <input class="btn btn-primary" type="submit" id="guardar" value="Guardar">
+                    <input class="btn btn-info" type="submit" id="guardar" value="Guardar">
 
 
                 </div>
