@@ -68,6 +68,7 @@
                                       <form action="{{route('cart.add')}}" method="post">
                                         @csrf
                                         <input type="hidden" name="producto_id" value="{{$product->id}}">
+
                                         <input type="submit" name="btn"  class="btn btn-success" value="ADD TO CART">
                                     </form>
                                 </a>

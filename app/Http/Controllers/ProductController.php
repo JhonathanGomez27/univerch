@@ -48,7 +48,7 @@ class ProductController extends Controller
     {
 
         $user = auth()->id();
-        echo($user);
+        //echo($user);
         $data = $request->all();
         $data['user_id'] = auth()->id();
         $product = new Product($data);
