@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FacultadController;
 use App\Http\Controllers\profileController;
-
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +21,11 @@ use App\Http\Controllers\profileController;
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'] )->name('home');
+Route::post('/cart-add', [CartController::class,'add'] )->name('cart.add');
+Route::get('/cart-checkout', [CartController::class,'cart'])->name('cart.checkout');
+Route::post('/cart-clear', [CartController::class,'clear'] )->name('cart.clear');
+Route::post('/cart-removeitem',[CartController::class,'removeitem'] )->name('cart.removeitem');
 Route::resource('dashboard/product', ProductController::class)->middleware('auth');;
 //por el momento solo perfil, luego ya le cambiamos el nombre a la ruta
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);

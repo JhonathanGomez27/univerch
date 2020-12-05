@@ -101,7 +101,7 @@ class ProductController extends Controller
     {
         //
         $product->update($request->validated());
-        return back()->with('status','Producto actualizado con exito');
+        return redirect()->back()->withSuccess('IT WORKS!');
 
     }
 

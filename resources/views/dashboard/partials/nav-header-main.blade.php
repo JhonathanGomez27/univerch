@@ -11,10 +11,10 @@
             <a href="#" class="nav-links" style="font-weight: bold">Inicio</a>
         </li>
         <li>
-            <a href="#" class="nav-links" style="font-weight: bold">Publicaciones</a>
+        <a href="{{url('../dashboard/product')}}" class="nav-links" style="font-weight: bold">Publicaciones</a>
         </li>
         <li>
-            <a href="#" class="nav-links" style="font-weight: bold"><img src="{{asset('img/cart.png')}}" width="30" height="30" alt=""> Carrito</a>
+        <a href="{{route('cart.checkout')}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/cart.png')}}" width="30" height="30" alt=""> Carrito</a>
         </li>
         <li>
             <a style="visibility: hidden" >hola</a>

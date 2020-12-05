@@ -3,6 +3,17 @@
 
 <div class="contenedorPublicaciones">
     <div class="row mb-2">
+
+<!----
+            @if (count(Cart::getContent()))
+                {{count(Cart::getContent())}}
+            @endif
+            esto es lo que muestra cuantos items hay en el carrito, lo comente, porque no se si sea importante y si lo vamos a mostrar
+            falta implementar algo que diga como producto anadido con exito, osea el metodo si sirve y lo anade pero, no puede
+            que retorne una alerta, lo impementan ahi :V
+---->
+
+
         @foreach ($products as $product)
             <div class="col-4" style="margin-top: 45px">
                 <ul>
@@ -53,7 +64,12 @@
                                       <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,91.764706%,80%);fill-opacity:1;" d="M 19.078125 3.5625 L 19.078125 7.78125 L 19.78125 7.78125 L 19.78125 6.375 L 21.1875 6.375 L 21.1875 4.96875 L 19.78125 4.96875 L 19.78125 3.5625 Z M 19.078125 3.5625 "/>
                                       </g>
                                       </svg>
-                                  <p>Agregar al carrito</p>
+
+                                      <form action="{{route('cart.add')}}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="producto_id" value="{{$product->id}}">
+                                        <input type="submit" name="btn"  class="btn btn-success" value="ADD TO CART">
+                                    </form>
                                 </a>
 
                             </div>
