@@ -45,3 +45,13 @@ Jhonathan Gomez:
     1)Hice la vista de mostrar producto
     2)Planeo terminar la vista de mostrar perfil
     3)Algunos estilos no se aplican correctamente
+
+
+
+04/12/2020
+
+
+Jhon Edison Rosero
+	1) Hice el carrito de Compras
+	2) planeo integral Paypal
+	3) ninguno hasta el momento
