@@ -17,6 +17,7 @@
                             <th>Precio unitario</th>
                             <th>Cantidad</th>
                             <th>Subtotal</th>
+                            <th>Vendedor</th>
                             <th></th>
                         </thead>
                             <tbody>
@@ -26,7 +27,11 @@
                                         <td>{{$item->name}}</td>
                                         <td>${{$item->price}}</td>
                                         <td>{{$item->quantity}}</td>
+
+
                                         <td>${{number_format($item->quantity*$item->price),0}} COP</td>
+                                        <td>{{$item->vendedor}}</td>
+
                                         <td>
                                             <form action="{{route('cart.removeitem')}}" method="POST">
                                                 @csrf
@@ -53,6 +58,7 @@
                         @csrf
                          <input type="hidden" name="compra" value="{{Cart::getContent()}}">
                         <input type="hidden" name="total" value="{{Cart::getTotal()}}">
+
                         <button type="submit" class="btn btn-success btn-sm">Pagar con Paypal</button>
                     </form>
 

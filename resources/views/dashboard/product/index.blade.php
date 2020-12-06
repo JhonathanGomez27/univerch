@@ -4,14 +4,12 @@
 <div class="contenedorPublicaciones">
     <div class="row mb-2">
 
-<!----
+
             @if (count(Cart::getContent()))
                 {{count(Cart::getContent())}}
             @endif
-            esto es lo que muestra cuantos items hay en el carrito, lo comente, porque no se si sea importante y si lo vamos a mostrar
-            falta implementar algo que diga como producto anadido con exito, osea el metodo si sirve y lo anade pero, no puede
-            que retorne una alerta, lo impementan ahi :V
----->
+
+
 
 
         @foreach ($products as $product)

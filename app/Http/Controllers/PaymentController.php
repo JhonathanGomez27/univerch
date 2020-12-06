@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Cart;
+use App\Models\Order;
+use PayPal\Api\Payee;
 use PayPal\Api\Payer;
 use PayPal\Api\Amount;
 use PayPal\Api\Payment;
@@ -9,11 +12,11 @@ use PayPal\Api\Transaction;
 use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
 use PayPal\Api\RedirectUrls;
+use PhpParser\Node\Expr\New_;
 use PayPal\Api\PaymentExecution;
 use PayPal\Auth\OAuthTokenCredential;
 use Illuminate\Support\Facades\Config;
 use PayPal\Exception\PayPalConnectionException;
-
 
 class PaymentController extends Controller
 {
@@ -36,9 +39,62 @@ class PaymentController extends Controller
     {
         ///Recibo el request que me trae la informacion necesaria para hacer una venta, id producto, precio, total, vendedor etc
         //echo($request->compra);
-        //return $request->total;
+       //$algo = Cart::getContent();
+
+
+     /*  for ($i =  1; $i <= count(Cart::getContent()); $i++) {
+            $ids[] = $i->id;
+            $vendedores[] = $i->vendedor;
+            $subtotales [] = $i->price * $i->quantity;
+        }
+        return*/
+
+        $cont = 0;
+        foreach (Cart::getContent() as $item)
+        {
+            //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
+            $vendedores = $item->vendedor;
+            $comprador = auth()->id();
+            $ids = $item->id;
+            $precios = $item->price;
+            $cantidad = $item->quantity;
+            //return  $cantidad;
+            $subtotales  = $item->price * $item->quantity;
+            $data['vendedor'] =  $vendedores;
+            $data['comprador'] =  $comprador;
+            $data['producto'] =  $ids;
+            $data['precio_unitario'] = $precios;
+            $data['cantidad'] =  $cantidad;
+            $data['total'] =  $subtotales;
+            $data['estado'] =  "creado";
+
+            $order = new Order( $data);
+            $order->save();
+
+        }
+        //return;
+
+
+
+       //
         $payer = new Payer();
+
+        //$payer_info =auth()->id();
         $payer->setPaymentMethod('paypal');
+        //$user = auth()->id();
+        //return $user;
+        //$payer->setPayerInfo($user);
+        //$algo =$payer-> getPayerInfo();
+        //return $algo;
+
+        //return $payer;
+        //$payee = New Payee();
+        //$payee_info = $request;
+        //$dato = json_decode($request, true);
+       //echo(Var_dump($request->compra));
+
+        //echo ( json_decode(stripslashes($request), true));
+        //return  $request->Vendedor;
 
 
         //en el amount ingreso el total de la venta
@@ -51,6 +107,10 @@ class PaymentController extends Controller
         $transaction->setAmount($amount);
         $transaction->setDescription('Gracias Por usar  Univerch');
 
+
+
+
+
         $callbackUrl = url('/paypal/status');
 
         $redirectUrls = new RedirectUrls();
@@ -60,6 +120,7 @@ class PaymentController extends Controller
         $payment = new Payment();
         $payment->setIntent('sale')
             ->setPayer($payer)
+
             ->setTransactions(array($transaction))
             ->setRedirectUrls($redirectUrls);
             //return $payer;
@@ -82,6 +143,19 @@ class PaymentController extends Controller
         if (!$paymentId || !$payerId || !$token) {
             $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
            // return redirect('/paypal/failed')->with(compact('status'));
+           $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
+        foreach (Cart::getContent() as $item)
+        {
+            //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
+            $ids = $item->id;
+            $estado = "creado";
+            $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+            $data['estado'] =  "rechazado";
+            $order->update( $data);
+
+
+        }
+        Cart::clear();
            return  $status;
         }
 
@@ -92,16 +166,41 @@ class PaymentController extends Controller
 
         /** Execute the payment **/
         $result = $payment->execute($execution, $this->apiContext);
+        //return $result;
 
         if ($result->getState() === 'approved') {
+
+
+            foreach (Cart::getContent() as $item)
+            {
+                //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
+                $ids = $item->id;
+                $estado = "creado";
+                $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+                $data['estado'] =  "aprovado";
+                $order->update( $data);
+
+
+            }
+            Cart::clear();
+
             $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente.';
-            //return redirect('welcome')->with(compact('status'));
-            //return redirect('/results')->with(compact('status'));
             return  $status;
         }
 
         $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
-        //return redirect('/results')->with(compact('status'));
+        foreach (Cart::getContent() as $item)
+        {
+            //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
+            $ids = $item->id;
+            $estado = "creado";
+            $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+            $data['estado'] =  "rechazado";
+            $order->update( $data);
+
+
+        }
+        Cart::clear();
         return  $status;
     }
 }
