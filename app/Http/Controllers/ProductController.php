@@ -17,8 +17,12 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $id = auth()->id();
         //Para filtar por id//->where('id', '=', '2')->paginate(10);
-        $products = Product::orderBy('created_at','desc')->where('estado', '=', 'publico')->paginate(10);
+        $products = Product::orderBy('created_at','desc')
+        ->where('estado', '=', 'publico')
+        ->where('user_id','!=',$id)
+        ->paginate(10);
         return view('dashboard.product.index',['products'=>$products]);
     }
 

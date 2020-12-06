@@ -10,9 +10,7 @@
             </div>
 
             <div class="form-group">
-                <textarea class="form__input" name="content" placeholder="Descripcion" id="content" rows="5">
-                {{ old('content', $product->content) }}
-                </textarea>
+                <textarea class="form__input" name="content" placeholder="Descripcion" id="content" rows="5">{{ old('content', $product->content) }}</textarea>
                 <label for="content" class="form__label">Descripción</label>
             </div>
 
