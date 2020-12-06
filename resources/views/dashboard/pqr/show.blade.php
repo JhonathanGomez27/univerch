@@ -10,7 +10,6 @@
         @else
         <p class="card-text">Respondido</p>
         @endif
-        {{ $tipo }}
         @if ($pqr->response!=null)
           <p class="card-text" >{{ $pqr->response }}</p>
         @else

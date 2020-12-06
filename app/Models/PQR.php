@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class PQR extends Model
 {
     use HasFactory;
-    protected $fillable = ['title','type','content','status','response','Product_id','user_id'];
+    protected $fillable = ['title','type','content','status','response','product_id','user_id'];
 
     public function user(){
         return $this->belongsTo(User::class);

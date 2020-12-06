@@ -66,20 +66,15 @@ class PQRController extends Controller
     //cambio en el metodo guardar ahora si guarda con el id del usuario para hacer la relacion
     public function store(Request $request)
     {
-        
         $user = auth()->id();
         //echo($user);
         $data = $request->all();
         $data['user_id'] = auth()->id();
-        $data['product_id'] ='1';
+        $data['product_id'] =2;
         $data['status']= 'review';
-        foreach ($data as $prueba => $value) {
-            # code...
-            echo($prueba.' \n ');
-        }
-        //$pqr = new PQR($data);
-        //$pqr->save();
-        //return back()->with('status','PQR creada con exito');
+        $pqr = new PQR($data);
+        $pqr->save();
+        return back()->with('status','PQR creada con exito');
     }
 
     /**

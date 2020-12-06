@@ -17,7 +17,7 @@
                         <select readonly class="form-control" style="background: transparent; border: none;
                         outline: none;
                         width: 100%;
-                        border-bottom: 0.1rem solid rgb(208, 128, 255);" name="typepqr" id="typepqr">
+                        border-bottom: 0.1rem solid rgb(208, 128, 255);" name="type" id="typepqr">
                             @include('dashboard.partials.option-pqr',['val' => $pqr->estado])
                         </select>
                     </div>
