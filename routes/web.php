@@ -7,7 +7,7 @@ use App\Http\Controllers\FacultadController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
-
+use App\Http\Controllers\PQRController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +43,7 @@ Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
+Route::resource('dashboard/pqr', PQRController::class)->middleware('auth');;
 
 Route::get('/', function () {
     return view('welcome');

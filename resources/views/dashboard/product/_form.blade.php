@@ -4,7 +4,7 @@
         <div class="col-5">
 
 
-            <div class="form__group">
+            <div class="form-group">
                 <input type="text" class="form__input" name="title" id="title" placeholder="Titulo" value="{{ old('title', $product->title) }}" required  />
                 <label for="name" class="form__label">Titulo</label>
             </div>
@@ -51,7 +51,7 @@
                             </svg></span>
                     </div>
                     <input type="number" class="form__input1" id="precio" name="precio" placeholder="Precio"
-                        aria-label="Amount (to the nearest dollar)" value="{{old('content', $product->content) }}">
+                        aria-label="Amount (to the nearest dollar)" value="{{old('content', $product->precio) }}">
                     <label for="precio" class="form__label">Precio</label>
                 </div>
 
