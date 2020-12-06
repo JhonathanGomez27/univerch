@@ -15,9 +15,9 @@ class CartController extends Controller
             $product->id,
             $product->title,
             $product->precio,
-
             1,
-            array("vendedor"=>$product->user_id)
+            $product->user_id,
+
 
         );
         //return view('dashboard.cart.index',"Producto actualizado con exito",['product'=> $producto]);
