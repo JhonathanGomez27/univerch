@@ -11,14 +11,14 @@
           <div class="card-header card-header-primary text-center colaq">
             <h4 class="card-title"><strong class="polsd">{{ __('Inicia Sesion') }}</strong></h4>
             <div class="social-line">
-              <a href="#" class="btn btn-just-icon btn-link btn-gray">
+            <a href="{{url('login/facebook')}}" class="btn btn-just-icon btn-link btn-gray">
                 <i class="fa fa-facebook-square"></i>
               </a>
-              <a href="#" class="btn btn-just-icon btn-link btn-gray">
-                <i class="fa fa-twitter"></i>
+              <a href="{{url('login/google')}}" class="btn btn-just-icon btn-link btn-gray">
+                <i class="fa fa-google "></i>
               </a>
-              <a href="#" class="btn btn-just-icon btn-link btn-gray">
-                <i class="fa fa-google-plus"></i>
+              <a href="{{url('login/github')}}" class="btn btn-just-icon btn-link btn-gray">
+                <i class="fa fa-github"></i>
               </a>
             </div>
           </div>

@@ -1,14 +1,17 @@
 <?php
 
+
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\FacultadController;
-use App\Http\Controllers\profileController;
+use App\Http\Controllers\PQRController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrdenController;
 use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\PQRController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\profileController;
+use App\Http\Controllers\FacultadController;
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +50,12 @@ Route::get('/dashboard/orders/index', [OrdenController::class, 'getMySales' ]);
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
 Route::resource('dashboard/pqr', PQRController::class)->middleware('auth');;
+//socialite
+Route::get('login/{driver}', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider']);
+Route::get('login/{driver}/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleProviderCallback']);
+
+Route::get('login/github', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGitHub']);
+Route::get('login/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGitHubCallback']);
 
 Route::get('/', function () {
     return view('welcome');
