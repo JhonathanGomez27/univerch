@@ -3,15 +3,9 @@
 
 <div class="contenedorPublicaciones">
     <div class="row mb-2">
-
-
             @if (count(Cart::getContent()))
                 {{count(Cart::getContent())}}
             @endif
-
-
-
-
         @foreach ($products as $product)
             <div class="col-4" style="margin-top: 45px">
                 <ul>
