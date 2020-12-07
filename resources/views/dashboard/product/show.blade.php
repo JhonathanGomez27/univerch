@@ -6,17 +6,15 @@
 
 
 <div class="form-show">
-        @foreach ($product->image as $image)
-            <div class="card-body">
-                <img src="{{asset('storage').'/'.'images'.'/'.$product->image->first()->image}}" alt="Card image cap">
-            </div>
-        @endforeach
+        
 
     <section class="product">
         <div class="product__photo">
             <div class="photo-container">
                 <div class="photo-main">
-                    <img src="{{asset('storage').'/'.'images'.'/'.'asusComp.png'}}">
+                    @foreach ($product->image as $image)
+                            <img src="{{asset('storage').'/'.'images'.'/'.$product->image->first()->image}}" alt="Card image cap">
+                    @endforeach
                 </div>
             </div>
         </div>
