@@ -48,6 +48,11 @@ Route::get('/dashboard/orders/index', [OrdenController::class, 'getMyOrders' ]);
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
 Route::resource('dashboard/pqr', PQRController::class)->middleware('auth');;
+//socialite
+
+Route::get('login/{driver}', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider']);
+Route::get('login/{driver}/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleProviderCallback']);
+
 
 //exports
 Route::get('/dashboard/export/orders/excel', [ExportsController::class, 'exportOrdersExcel' ])->name('orders.excel');
