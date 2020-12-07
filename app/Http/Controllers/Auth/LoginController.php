@@ -82,6 +82,7 @@ class LoginController extends Controller
                 $user = User::create([
                     'name' => $userSocialite->getName(),
                     'email'=> $userSocialite->getEmail(),
+                    'rol_id' => 2,
                 ]);
             }
 
