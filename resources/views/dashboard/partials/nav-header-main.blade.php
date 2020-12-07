@@ -8,10 +8,10 @@
             <a href="{{url('profile',auth()->id())}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/user.png')}}" width="30" height="30" alt=""> Perfil</a>
         </li>
         <li>
-            <a href="#" class="nav-links" style="font-weight: bold">Inicio</a>
+            <a href="{{url('dashboard/product')}}" class="nav-links" style="font-weight: bold">Inicio</a>
         </li>
         <li>
-        <a href="{{url('dashboard/product')}}" class="nav-links" style="font-weight: bold">Publicaciones</a>
+        <a href="{{url('dashboard/orders')}}" class="nav-links" style="font-weight: bold">Publicaciones</a>
         </li>
         <li>
         <a href="{{route('cart.checkout')}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/cart.png')}}" width="30" height="30" alt=""> Carrito</a>
