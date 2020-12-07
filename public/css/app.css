@@ -895,6 +895,75 @@ main {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.container-sales-orders {
+  width: 90%;
+  padding: 30px;
+  margin: auto;
+  height: 100vh;
+}
+
+.container-so {
+  width: 70%;
+  padding: 30px;
+  margin: auto;
+}
+
+.container-sales-orders .container-so thead {
+  background: #c574eb;
+}
+
+.container-sales-orders .container-so p {
+  text-align: center;
+}
+
+.container-sales-orders .container-so h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+}
+
+.container-sales-orders .container-so h1.retroshadow {
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+  text-shadow: 4px 4px 0px #d5d5d5;
+}
+
+.container-sales-orders .container-so .btn--archivos .pdf--btn {
+  padding: 1.5em 2em;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #fff;
+  background-color: #fd4039;
+  box-shadow: 2px 2px 25px -7px #4c4c4c;
+  cursor: pointer;
+}
+
+.container-sales-orders .container-so .btn--archivos .pdf--btn:active {
+  transform: scale(0.97);
+}
+
+.container-sales-orders .container-so .btn--archivos .excel--btn {
+  padding: 1.5em 2em;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #fff;
+  background-color: #4fce64;
+  box-shadow: 2px 2px 25px -7px #4c4c4c;
+  cursor: pointer;
+}
+
+.container-sales-orders .container-so .btn--archivos .excel--btn:active {
+  transform: scale(0.97);
+}
+
 /*!
  * Bootstrap v4.5.3 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
