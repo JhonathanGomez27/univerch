@@ -7,14 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['vendedor','comprador','producto','precio_unitario','cantidad','total','estado'];
+    protected $fillable = ['comprador_id','product_id','precio_unitario','cantidad','total','estado'];
+    //['vendedor','comprador','producto','precio_unitario','cantidad','total','estado'];
 
 
 
-    public function products(){
+    public function product(){
         return $this->belongsTo(Product::class);
     }
-    public function user(){
+    public function comprador(){
         return $this->belongsTo(User::class);
     }
 }

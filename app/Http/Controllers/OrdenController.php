@@ -13,7 +13,7 @@ class OrdenController extends Controller
         //Para filtar por id//->where('id', '=', '2')->paginate(10);
         $orders = Order::orderBy('created_at','desc')
         ->where('estado', '=', 'aprovado')
-        ->where('comprador','=',$id)
+        ->where('comprador_id','=',$id)
         ->paginate(10);
         return view('dashboard.orders.index',['orders'=>$orders]);
     }

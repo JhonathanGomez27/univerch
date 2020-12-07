@@ -15,17 +15,19 @@
     <table class="table table-striped">
         <thead>
             <th>Id</th>
-            <th>Nombre</th>
-
-            <th></th>
+            <th>Producto</th>
+            <th>Comprador</th>
+            <th>Vendedor</th>
         </thead>
             <tbody>
 
                     @foreach ($orders as $order)
-                    <tr>
-
-                    <td>{{$order}}</td>
-                     </tr>
+                      <tr>
+                        <td>{{ $order->id }}</td>
+                        <td>{{ $order->product->title  }}</td>
+                        <td>{{ $order->comprador->name  }}</td>
+                        <td>{{$order->product->user->name}}</td>
+                      </tr>
                     @endforeach
 
              </tbody>
