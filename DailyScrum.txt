@@ -58,17 +58,30 @@ Jhonathan Gomez
     1)Termine la vista de mostrar perfil
     2)planeo hacer la vista de carrito de compras y ordenes
     3)ninguno
+Yoiner Lopez:
+    1) Se agrego imagenes a los productos
+    2) Iniciar controlador de las pqr
+    3) Ninguno por el momento
+
  05/12/2020
     Jhonathan Gomez
     1)Hice la vista de carrito de compras y ordenes
     2)Planeo hacer la vista de pago exitoso con paypal
     3)Ninguno
+Yoiner Lopez:
+    1) Configure modelo y y controlador de pqr
+    2) Agreguar lo minimo de las vistas de pqr
+    3) Ninguno
 
  06/12/2020
     Jhonathan Gomez
     1)He  hecho la vistas de las facultades index, crear, mostrar y de pago exitoso con paypal
     2)Planeo terminar la vista de las pqr
     3)Ninguno
+Yoiner Lopez:
+    1) Agregue vistas sin estilos de pqr
+    2) Agregar roles
+    3) Manejar roles
 
 
  07/12/2020
@@ -76,3 +89,8 @@ Jhonathan Gomez
     1)Vista de pqr terminadas
     2)
     3)
+    Yoiner Lopez:
+    1) se configuro de administrador y usuarios-vendedores los roles
+    2) 
+    3) 
+
