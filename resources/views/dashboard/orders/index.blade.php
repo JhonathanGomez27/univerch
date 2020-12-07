@@ -44,6 +44,7 @@
                             <th>Producto</th>
                             <th>Comprador</th>
                             <th>Vendedor</th>
+                            <th>PQR</th>
                         </thead>
                             <tbody>
                                 @foreach ($orders as $order)
@@ -52,6 +53,7 @@
                                         <td>{{ $order->product->title}}</td>
                                         <td>{{ $order->comprador->name}}</td>
                                         <td>{{ $order->vendedor->name}}</td>
+                                        <td><a class="btn btn-primary" href="{{route('pqr.create')}}"> Generar Pqr</a> </td>
                                     </tr>
                                 @endforeach
                             </tbody>

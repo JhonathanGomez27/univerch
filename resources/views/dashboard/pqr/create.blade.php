@@ -27,7 +27,7 @@
                                 <div class="input-group mb-2">
 
                                     <div class="input-group-prepend">
-                                        <a href="{{route('pqr.index')}}" class="btn volver--btn" >Regresar</a>
+                                        <a href="{{url('dashboard/orders')}}" class="btn volver--btn" >Regresar</a>
                                     </div>
                                     <div class="col-2"></div>
                                     <input class="btn aceptar--btn" type="submit" id="guardar" value="Guardar">
