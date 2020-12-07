@@ -1,17 +1,15 @@
 <?php
 
-
-
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PQRController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrdenController;
+use App\Http\Controllers\ExportsController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\FacultadController;
-use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,21 +39,21 @@ Route::get('/paypal/status', [PaymentController::class,'payPalStatus'] )->name('
 
 
 //producto
-Route::resource('dashboard/product', ProductController::class)->middleware('auth');;
+Route::resource('dashboard/product', ProductController::class)->middleware('auth');
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 //Perfil
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
-Route::get('/dashboard/orders/index', [OrdenController::class, 'getMySales' ]);
+Route::get('/dashboard/orders/index', [OrdenController::class, 'getMyOrders' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
 Route::resource('dashboard/pqr', PQRController::class)->middleware('auth');;
-//socialite
-Route::get('login/{driver}', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider']);
-Route::get('login/{driver}/callback', [App\Http\Controllers\Auth\LoginController::class, 'handleProviderCallback']);
 
-Route::get('login/github', [App\Http\Controllers\Auth\LoginController::class, 'redirectToGitHub']);
-Route::get('login/callback',[App\Http\Controllers\Auth\LoginController::class, 'handleGitHubCallback']);
+//exports
+Route::get('/dashboard/export/orders/excel', [ExportsController::class, 'exportOrdersExcel' ])->name('orders.excel');
+Route::get('/dashboard/export/sales/excel', [ExportsController::class, 'exportSalesExcel' ])->name('sales.excel');
+Route::get('/dashboard/export/orders/pdf', [ExportsController::class, 'exportOrdersPDF' ])->name('orders.pdf');
+Route::get('/dashboard/export/sales/pdf', [ExportsController::class, 'exportSalesPDF' ])->name('sales.pdf');
 
 Route::get('/', function () {
     return view('welcome');

@@ -16,7 +16,7 @@
         <div class="product__photo">
             <div class="photo-container">
                 <div class="photo-main">
-                    <img src="{{asset('storage').'/'.'images'.'/'.'asusComp.png'}}" alt="green apple slice">
+                    <img src="{{asset('storage').'/'.'images'.'/'.'asusComp.png'}}">
                 </div>
             </div>
         </div>

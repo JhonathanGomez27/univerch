@@ -5,13 +5,13 @@
     <a href="#" class="logo" style="font-weight: bolder"><img src="{{asset('img/tienda-en-linea.png')}}" width="45" height="45" alt=""> UNIVERCH</a>
     <ul class="main-nav" id="js-menu">
         <li>
-            <a href="{{url('../../profile',auth()->id())}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/user.png')}}" width="30" height="30" alt=""> Perfil</a>
+            <a href="{{url('profile',auth()->id())}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/user.png')}}" width="30" height="30" alt=""> Perfil</a>
         </li>
         <li>
             <a href="#" class="nav-links" style="font-weight: bold">Inicio</a>
         </li>
         <li>
-        <a href="{{url('../dashboard/product')}}" class="nav-links" style="font-weight: bold">Publicaciones</a>
+        <a href="{{url('dashboard/product')}}" class="nav-links" style="font-weight: bold">Publicaciones</a>
         </li>
         <li>
         <a href="{{route('cart.checkout')}}" class="nav-links" style="font-weight: bold"><img src="{{asset('img/cart.png')}}" width="30" height="30" alt=""> Carrito</a>

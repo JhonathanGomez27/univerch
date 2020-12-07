@@ -2,6 +2,7 @@
 @section('content')
 
 <div class="contenedorPublicaciones">
+    <a style="text-decoration: none" href="{{route('product.create')}}" class="btn-flotante">Agregar</a>
     <div class="row mb-2">
             @if (count(Cart::getContent()))
                 {{count(Cart::getContent())}}
