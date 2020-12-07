@@ -20,6 +20,7 @@ use PayPal\Exception\PayPalConnectionException;
 
 class PaymentController extends Controller
 {
+    public $compra ="";
     private $apiContext;
     public function __construct()
     {
@@ -162,7 +163,7 @@ class PaymentController extends Controller
                 ->where('cantidad','=',$cantidad)
                 ->where('total','=',$subtotales)
                 ->where('precio_unitario','=',$precios);
-            $data['estado'] =  "rechazado";
+                 $data['estado'] =  "rechazado";
             $order->update( $data);
 
 
@@ -182,7 +183,7 @@ class PaymentController extends Controller
 
         if ($result->getState() === 'approved') {
 
-
+           // = "";
             foreach (Cart::getContent() as $item)
             {
                 //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
@@ -203,13 +204,15 @@ class PaymentController extends Controller
                 ->where('precio_unitario','=',$precios);
                 $data['estado'] =  "aprovado";
                 $order->update( $data);
-
-
+                //$pasar = $order;
             }
+            //return  $order;
+            $compra = Cart::getContent();
+            //return $compra;
             Cart::clear();
 
             $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente.';
-            return view('welcome');
+            return view('dashboard.paypal.success', ['compra'=> $compra]);
             //return  $status;
         }
 

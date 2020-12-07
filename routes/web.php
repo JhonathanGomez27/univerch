@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FacultadController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrdenController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PQRController;
 /*
@@ -41,6 +42,7 @@ Route::resource('dashboard/product', ProductController::class)->middleware('auth
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 //Perfil
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
+Route::get('/dashboard/orders/index', [OrdenController::class, 'getMyOrders' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);

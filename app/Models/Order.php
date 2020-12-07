@@ -11,10 +11,10 @@ class Order extends Model
 
 
 
-    public function product(){
-        return $this->hasMany(Product::class);
+    public function products(){
+        return $this->belongsTo(Product::class);
     }
     public function user(){
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }
