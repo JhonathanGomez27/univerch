@@ -21,12 +21,12 @@
         </thead>
             <tbody>
 
-                    @foreach ($orders as $order)
+                    @foreach ($sales as $sale)
                       <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->product->title  }}</td>
-                        <td>{{ $order->comprador->name  }}</td>
-                        <td>{{ $order->vendedor->name}}</td>
+                        <td>{{ $sale->id }}</td>
+                        <td>{{ $sale->product->title  }}</td>
+                        <td>{{ $sale->comprador->name  }}</td>
+                        <td>{{ $sale->vendedor->name}}</td>
                       </tr>
                     @endforeach
 

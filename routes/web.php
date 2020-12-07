@@ -42,7 +42,7 @@ Route::resource('dashboard/product', ProductController::class)->middleware('auth
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 //Perfil
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
-Route::get('/dashboard/orders/index', [OrdenController::class, 'getMyOrders' ]);
+Route::get('/dashboard/orders/index', [OrdenController::class, 'getMySales' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
