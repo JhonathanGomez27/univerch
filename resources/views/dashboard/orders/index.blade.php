@@ -29,9 +29,9 @@
               </table>
 
               <div class="btn--archivos">
-                <input class="btn pdf--btn" value="Generar PDF">
+                <a class="btn pdf--btn" href="{{route('sales.pdf')}}"> Generar PDF </a>
                 <input class="btn pdf--btn" style="visibility: hidden;" value="">
-                <input class="btn excel--btn" value="Generar Excel">
+                <a class="btn excel--btn" href="{{route('sales.excel')}}"> Generar Excel </a>
               </div>
 
               <br>
@@ -58,9 +58,9 @@
                     </table>
                 </div>
                 <div class="btn--archivos">
-                    <input class="btn pdf--btn" value="Generar PDF">
+                    <a class="btn pdf--btn" href="{{route('orders.pdf')}}"> Generar PDF </a>
                     <input class="btn pdf--btn" style="visibility: hidden;" value="">
-                    <input class="btn excel--btn" value="Generar Excel">
+                    <a class="btn excel--btn" href="{{route('orders.excel')}}"> Generar Excel </a>
                   </div>
               </div>
           </div>
