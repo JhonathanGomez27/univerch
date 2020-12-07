@@ -28,9 +28,9 @@ Jhonathan Gomez:
     2)Planeo obtener los productos publicado de cada usario, es decir cuando entre al perfil de un usuario, pueda ver solo los productos
     publicados por  este usuario
     3)ninguno se ha presentado hasta el momento
-    
+
 Yoiner Lopez:
-    1) Corregi una parte del formulario de creación de poductos 
+    1) Corregi una parte del formulario de creación de poductos
     2) Permitir que cada producto pueda tener sus propias imagenes
     3) Ninguno se ha presentado
 
@@ -39,6 +39,7 @@ Yoiner Lopez:
     1) El crud basico de productos con imagenes
     2) Configurar los productos para mostrar las imagenes segun la relacion
     3) Como realizar la estraccion de imagenes, del storage
+
 25/11/2020
 
 Jhonathan Gomez:
@@ -49,9 +50,29 @@ Jhonathan Gomez:
 
 
 04/12/2020
-
-
 Jhon Edison Rosero
 	1) Hice el carrito de Compras
 	2) planeo integral Paypal
 	3) ninguno hasta el momento
+Jhonathan Gomez
+    1)Termine la vista de mostrar perfil
+    2)planeo hacer la vista de carrito de compras y ordenes
+    3)ninguno
+ 05/12/2020
+    Jhonathan Gomez
+    1)Hice la vista de carrito de compras y ordenes
+    2)Planeo hacer la vista de pago exitoso con paypal
+    3)Ninguno
+
+ 06/12/2020
+    Jhonathan Gomez
+    1)He  hecho la vistas de las facultades index, crear, mostrar y de pago exitoso con paypal
+    2)Planeo terminar la vista de las pqr
+    3)Ninguno
+
+
+ 07/12/2020
+    Jhonathan Gomez
+    1)Vista de pqr terminadas
+    2)
+    3)
