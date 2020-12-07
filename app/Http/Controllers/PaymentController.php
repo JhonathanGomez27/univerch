@@ -61,7 +61,7 @@ class PaymentController extends Controller
             $cantidad = $item->quantity;
             //return  $cantidad;
             $subtotales  = $item->price * $item->quantity;
-            //$data['vendedor_id'] =  $vendedores;
+            $data['vendedor_id'] =  $vendedores;
             $data['comprador_id'] =  $comprador;
             $data['product_id'] =  $ids;
             $data['precio_unitario'] = $precios;
@@ -158,7 +158,7 @@ class PaymentController extends Controller
                 $order = Order::orderBy('created_at','desc')
                 ->where('product_id', '=', $ids)
                 ->where('estado','=',$estado)
-                //->where('vendedor','=',$vendedores)
+                ->where('vendedor_id','=',$vendedores)
                 ->where('comprador_id','=',$comprador)
                 ->where('cantidad','=',$cantidad)
                 ->where('total','=',$subtotales)
@@ -197,7 +197,7 @@ class PaymentController extends Controller
                 $order = Order::orderBy('created_at','desc')
                 ->where('product_id', '=', $ids)
                 ->where('estado','=',$estado)
-                //->where('vendedor','=',$vendedores)
+                ->where('vendedor_id','=',$vendedores)
                 ->where('comprador_id','=',$comprador)
                 ->where('cantidad','=',$cantidad)
                 ->where('total','=',$subtotales)
@@ -230,7 +230,7 @@ class PaymentController extends Controller
             $order = Order::orderBy('created_at','desc')
             ->where('product_id', '=', $ids)
             ->where('estado','=',$estado)
-            //->where('vendedor','=',$vendedores)
+            ->where('vendedor_id','=',$vendedores)
             ->where('comprador_id','=',$comprador)
             ->where('cantidad','=',$cantidad)
             ->where('total','=',$subtotales)

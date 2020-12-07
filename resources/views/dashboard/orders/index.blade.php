@@ -26,7 +26,7 @@
                         <td>{{ $order->id }}</td>
                         <td>{{ $order->product->title  }}</td>
                         <td>{{ $order->comprador->name  }}</td>
-                        <td>{{$order->product->user->name}}</td>
+                        <td>{{ $order->vendedor->name}}</td>
                       </tr>
                     @endforeach
 

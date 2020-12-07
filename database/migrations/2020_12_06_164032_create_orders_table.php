@@ -16,7 +16,7 @@ class CreateOrdersTable extends Migration
         //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            //$table->bigInteger('vendedor_id')->nullable();
+            $table->bigInteger('vendedor_id')->nullable();
             $table->bigInteger('comprador_id')->nullable();
             $table->bigInteger('product_id')->nullable();
             $table->bigInteger('precio_unitario')->nullable();
