@@ -1,15 +1,11 @@
 @extends('dashboard.master')
 @section('content')
-<div class="container">
-
+<div class="container-facultades">
+    <div class="container-carrito">
         <div class="row">
-
         </div>
         <div class="col sm-3">
-            Carro de mierda este
             @if (count(Cart::getContent()))
-                {{Cart::getContent()}}
-
                     <table class="table table-striped">
                         <thead>
                             <th>Id</th>
@@ -18,7 +14,7 @@
                             <th>Cantidad</th>
                             <th>Subtotal</th>
                             <th>Vendedor</th>
-                            <th></th>
+                            <th>Opciones</th>
                         </thead>
                             <tbody>
                                 @foreach (Cart::getContent() as $item)
@@ -43,6 +39,7 @@
                                 @endforeach
                                 <tr>
                                     <td colspan="3"></td>
+                                    <td></td>
                                     <td>Total</td>
                                     <td>${{number_format(Cart::getTotal(),0)}} COP</td>
                                     <td>
@@ -59,19 +56,16 @@
                          <input type="hidden" name="compra" value="{{Cart::getContent()}}">
                         <input type="hidden" name="total" value="{{Cart::getTotal()}}">
 
-                        <button type="submit" class="btn btn-success btn-sm">Pagar con Paypal</button>
+                        <button type="submit" class="btn pagar--btn">Pagar con Paypal</button>
                     </form>
-
-
                  @else
-                <p>Carro de la putisima mierda vacio</p>
-
             @endif
-
          </div>
          <div class="col sm-10">
 
          </div>
+    </div>
+
 </div>
 @endsection
 

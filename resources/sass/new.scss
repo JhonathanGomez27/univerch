@@ -1002,10 +1002,39 @@ h3 {
   }
 
 
+
+
   .container-facultades{
     width: 100%;
     margin: auto;
     height: 100vh;
+  }
+  .container-facultades .container-carrito{
+    width: 70%;
+    padding: 30px;
+    margin: auto;
+  }
+
+  .container-facultades .container-carrito .pagar--btn{
+    padding: 1.5em 2em;
+	border: none;
+	border-radius: 7px;
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 1.3px;
+	color: #fff;
+	background-color: rgb(74, 190, 84);
+	box-shadow: 2px 2px 25px -7px #4c4c4c;
+	cursor: pointer;
+
+	&:active {
+		transform: scale(0.97);
+	}
+  }
+
+  .container-facultades .container-carrito thead{
+      background: rgb(158, 63, 142);
+      color: white;
   }
 
   .container-facultades .container-fac{

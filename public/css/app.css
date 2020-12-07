@@ -970,6 +970,34 @@ main {
   height: 100vh;
 }
 
+.container-facultades .container-carrito {
+  width: 70%;
+  padding: 30px;
+  margin: auto;
+}
+
+.container-facultades .container-carrito .pagar--btn {
+  padding: 1.5em 2em;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #fff;
+  background-color: #4abe54;
+  box-shadow: 2px 2px 25px -7px #4c4c4c;
+  cursor: pointer;
+}
+
+.container-facultades .container-carrito .pagar--btn:active {
+  transform: scale(0.97);
+}
+
+.container-facultades .container-carrito thead {
+  background: #9e3f8e;
+  color: white;
+}
+
 .container-facultades .container-fac {
   width: 70%;
   padding: 30px;
