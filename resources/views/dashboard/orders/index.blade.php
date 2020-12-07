@@ -53,7 +53,13 @@
                                         <td>{{ $order->product->title}}</td>
                                         <td>{{ $order->comprador->name}}</td>
                                         <td>{{ $order->vendedor->name}}</td>
-                                        <td><a class="btn btn-primary" href="{{route('pqr.create')}}"> Generar Pqr</a> </td>
+                                        <td>
+                                            <form action="{{route('pqr.create')}}" method="POST">
+                                                @csrf
+                                                 <input type="hidden" name="product_id" value="{{ $order->product->id}}">
+                                                <button type="submit" class="btn pagar--btn">Generar PQR</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

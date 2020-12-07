@@ -49,7 +49,8 @@ Route::get('/dashboard/orders', [OrdenController::class, 'getMyOrders' ]);
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
 
-Route::resource('dashboard/pqr', PQRController::class);
+Route::resource('dashboard/pqr', PQRController::class)->except('create');
+Route::post('dashboard/pqr/create', [PQRController::class, 'createPqr'])->name('pqr.create');
 
 //socialite
 

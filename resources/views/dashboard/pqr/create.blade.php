@@ -25,7 +25,10 @@
 
                             <div class="form-group">
                                 <div class="input-group mb-2">
-
+                                    hola
+                                    {{ $id }}
+                                    hola
+                                    <input type="hidden" name="product_id" value="{{ $id}}">
                                     <div class="input-group-prepend">
                                         <a href="{{url('dashboard/orders')}}" class="btn volver--btn" >Regresar</a>
                                     </div>

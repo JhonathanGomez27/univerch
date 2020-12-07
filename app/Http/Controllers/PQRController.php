@@ -23,18 +23,20 @@ class PQRController extends Controller
         //Para filtar por id//->where('id', '=', '2')->paginate(10);
         $id = Auth()->id();
         $user =User::find($id);
+
         if(is_object($user)){
         
-            if ($user->email!='admin@admin.com') {
+            if ($user->rol->key=='admin') {
                 # code...
+                $pqrs = pqr::all();
+                return view('dashboard.pqr.index',['pqrs'=>$pqrs,'tipo'=>1]);
+
                 
-                $pqrs = Pqr::orderBy('created_at','desc')->where('id','=',$id)->paginate(10);
+            } else {
+                //$pqrs = Pqr::orderBy('created_at','desc')->paginate(10);
+                $pqrs = pqr::all();//::orderBy('created_at','desc')->where('id','=',$id);
         
                 return view('dashboard.pqr.index',['pqrs'=>$pqrs,'tipo'=>2]);
-            } else {
-                $pqrs = Pqr::orderBy('created_at','desc')->paginate(10);
-        
-                return view('dashboard.pqr.index',['pqrs'=>$pqrs,'tipo'=>1]);
             }
             
             
@@ -46,6 +48,7 @@ class PQRController extends Controller
         
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -53,14 +56,18 @@ class PQRController extends Controller
      */
     public function create()
     {
+
+    }
+    public function createPqr(Request $request)
+    {
         //
         //$products = Products::pluck('id','title');
         //$user = auth()->id();
         //echo($user);
-        return view('dashboard.pqr.create',['pqr'=>new PQR()]);
+        $id = $request->product_id;
+        return view('dashboard.pqr.create',['pqr'=>new PQR(),'id'=>$id]);
 
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -74,7 +81,6 @@ class PQRController extends Controller
         //echo($user);
         $data = $request->all();
         $data['user_id'] = auth()->id();
-        $data['product_id'] =2;
         $data['status']= 'review';
         $pqr = new PQR($data);
         $pqr->save();
@@ -93,6 +99,7 @@ class PQRController extends Controller
     {
         
         $pqr = pqr::find($id);
+        echo($pqr);
         
         if(!is_object($pqr)){
             return "Este pqr no existe";
