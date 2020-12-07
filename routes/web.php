@@ -48,7 +48,11 @@ Route::get('/dashboard/orders', [OrdenController::class, 'getMyOrders' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
-Route::resource('dashboard/pqr', PQRController::class);
+
+Route::resource('dashboard/pqr', PQRController::class)->except([
+    'create', 'update', 'destroy'
+]);
+
 //socialite
 
 Route::get('login/{driver}', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider']);
