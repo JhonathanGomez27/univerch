@@ -7,7 +7,7 @@
 
                 <div class="form-group">
                     <input type="text" class="form__input" name="title" id="title" placeholder="Titulo" value="{{ old('title', $facultad->title) }}" required  />
-                    <label for="name" class="form__label">Titulo</label>
+                    <label for="title" class="form__label">Titulo</label>
                 </div>
 
                 <div class="form-group">

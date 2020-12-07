@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PQRController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrdenController;
 use App\Http\Controllers\ExportsController;
 use App\Http\Controllers\PaymentController;
@@ -55,6 +56,7 @@ Route::get('/dashboard/export/sales/excel', [ExportsController::class, 'exportSa
 Route::get('/dashboard/export/orders/pdf', [ExportsController::class, 'exportOrdersPDF' ])->name('orders.pdf');
 Route::get('/dashboard/export/sales/pdf', [ExportsController::class, 'exportSalesPDF' ])->name('sales.pdf');
 
+Route::get('/admin', [AdminController::class,'index'])->name('admin');
 Route::get('/', function () {
-    return view('welcome');
-});
+ return redirect('dashboard/product');
+})->middleware('auth');

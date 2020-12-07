@@ -31219,3 +31219,25 @@ a.text-muted:hover {
   color: #ffffff;
 }
 /*# sourceMappingURL=adminlte.css.map */
+.form__label {
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  margin-top: 0.3rem;
+  display: block;
+  transition: all 0.3s;
+  transform: translateY(0rem);
+}
+
+.form__input {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  font-size: 1rem;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  display: block;
+  border-bottom: 0.1rem solid #d080ff;
+  transition: all 0.3s;
+}

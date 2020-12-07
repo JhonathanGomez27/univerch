@@ -40,4 +40,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function adminlte_image(){
+        return 'https://i.pinimg.com/originals/19/b8/d6/19b8d6e9b13eef23ec9c746968bb88b1.jpg';
+    }
+    public function adminlte_desc(){
+        return 'Aministrador';
+    }
+    
 }
