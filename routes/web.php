@@ -35,6 +35,7 @@ Route::post('/cart-removeitem',[CartController::class,'removeitem'] )->name('car
 Route::post('/paypal/pay', [PaymentController::class,'payWithPayPal'] )->name('paypal.payWithPayPal');
 Route::get('/paypal/status', [PaymentController::class,'payPalStatus'] )->name('paypal.payPalStatus');
 
+
 //producto
 Route::resource('dashboard/product', ProductController::class)->middleware('auth');;
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');

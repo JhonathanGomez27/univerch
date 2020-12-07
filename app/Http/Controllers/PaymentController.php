@@ -148,8 +148,20 @@ class PaymentController extends Controller
         {
             //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
             $ids = $item->id;
-            $estado = "creado";
-            $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+                $estado = "creado";
+                $vendedores = $item->vendedor;
+                $comprador = auth()->id();
+                $precios = $item->price;
+                $cantidad = $item->quantity;
+                $subtotales  = $item->price * $item->quantity;
+                $order = Order::orderBy('created_at','desc')
+                ->where('producto', '=', $ids)
+                ->where('estado','=',$estado)
+                ->where('vendedor','=',$vendedores)
+                ->where('comprador','=',$comprador)
+                ->where('cantidad','=',$cantidad)
+                ->where('total','=',$subtotales)
+                ->where('precio_unitario','=',$precios);
             $data['estado'] =  "rechazado";
             $order->update( $data);
 
@@ -176,7 +188,19 @@ class PaymentController extends Controller
                 //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
                 $ids = $item->id;
                 $estado = "creado";
-                $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+                $vendedores = $item->vendedor;
+                $comprador = auth()->id();
+                $precios = $item->price;
+                $cantidad = $item->quantity;
+                $subtotales  = $item->price * $item->quantity;
+                $order = Order::orderBy('created_at','desc')
+                ->where('producto', '=', $ids)
+                ->where('estado','=',$estado)
+                ->where('vendedor','=',$vendedores)
+                ->where('comprador','=',$comprador)
+                ->where('cantidad','=',$cantidad)
+                ->where('total','=',$subtotales)
+                ->where('precio_unitario','=',$precios);
                 $data['estado'] =  "aprovado";
                 $order->update( $data);
 
@@ -185,7 +209,8 @@ class PaymentController extends Controller
             Cart::clear();
 
             $status = 'Gracias! El pago a través de PayPal se ha ralizado correctamente.';
-            return  $status;
+            return view('welcome');
+            //return  $status;
         }
 
         $status = 'Lo sentimos! El pago a través de PayPal no se pudo realizar.';
@@ -194,7 +219,19 @@ class PaymentController extends Controller
             //vendedor','comprador','producto','precio_unitario','cantidad','total','estado
             $ids = $item->id;
             $estado = "creado";
-            $order = Order::orderBy('created_at','desc')->where('producto', '=', $ids );
+            $vendedores = $item->vendedor;
+            $comprador = auth()->id();
+            $precios = $item->price;
+            $cantidad = $item->quantity;
+            $subtotales  = $item->price * $item->quantity;
+            $order = Order::orderBy('created_at','desc')
+            ->where('producto', '=', $ids)
+            ->where('estado','=',$estado)
+            ->where('vendedor','=',$vendedores)
+            ->where('comprador','=',$comprador)
+            ->where('cantidad','=',$cantidad)
+            ->where('total','=',$subtotales)
+            ->where('precio_unitario','=',$precios);
             $data['estado'] =  "rechazado";
             $order->update( $data);
 
