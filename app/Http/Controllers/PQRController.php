@@ -14,6 +14,10 @@ class PQRController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         //Para filtar por id//->where('id', '=', '2')->paginate(10);

@@ -8,6 +8,9 @@ use App\Models\Product;
 
 class CartController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function add(Request $request){
 
         $product = Product::find($request->producto_id);

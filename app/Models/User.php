@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Rol;
 use App\Models\SocialProfile;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -48,7 +49,7 @@ class User extends Authenticatable
         return 'https://i.pinimg.com/originals/19/b8/d6/19b8d6e9b13eef23ec9c746968bb88b1.jpg';
     }
     public function adminlte_desc(){
-        return 'Aministrador';
+        return 'Administrador';
     }
     
 
@@ -56,5 +57,8 @@ class User extends Authenticatable
         return $this->hasMany(SocialProfile::class);
     }
 
-
+    
+    public function rol(){
+        return $this->belongsTo(Rol::class);
+    }
 }

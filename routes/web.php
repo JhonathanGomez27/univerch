@@ -40,15 +40,15 @@ Route::get('/paypal/status', [PaymentController::class,'payPalStatus'] )->name('
 
 
 //producto
-Route::resource('dashboard/product', ProductController::class)->middleware('auth');
+Route::resource('dashboard/product', ProductController::class);
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 //Perfil
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
-Route::get('/dashboard/orders/index', [OrdenController::class, 'getMyOrders' ]);
+Route::get('/dashboard/orders', [OrdenController::class, 'getMyOrders' ]);
 
 //facultad
 Route::resource('dashboard/facultad', FacultadController::class);
-Route::resource('dashboard/pqr', PQRController::class)->middleware('auth');;
+Route::resource('dashboard/pqr', PQRController::class);
 //socialite
 
 Route::get('login/{driver}', [App\Http\Controllers\Auth\LoginController::class, 'redirectToProvider']);
@@ -64,4 +64,4 @@ Route::get('/dashboard/export/sales/pdf', [ExportsController::class, 'exportSale
 Route::get('/admin', [AdminController::class,'index'])->name('admin');
 Route::get('/', function () {
  return redirect('dashboard/product');
-})->middleware('auth');
+});

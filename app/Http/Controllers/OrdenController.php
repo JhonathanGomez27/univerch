@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class OrdenController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    public function rol(){
+        return $this->hasMany(Rol::class);
+    }
     public function getMyOrders()
     {
         $id = auth()->id();

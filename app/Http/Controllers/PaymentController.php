@@ -24,6 +24,8 @@ class PaymentController extends Controller
     private $apiContext;
     public function __construct()
     {
+        $this->middleware('auth');
+        
         $payPalConfig = Config::get('paypal');
 
         $this->apiContext = new ApiContext(
@@ -33,6 +35,7 @@ class PaymentController extends Controller
             )
         );
          $this->apiContext->setConfig($payPalConfig['settings']);
+
     }
 
 
