@@ -18,11 +18,11 @@
                     <p class="info">{{ $user->email }}</p>
                     <div class="stats row">
                         <div class="stat col-xs-4" style="padding-right: 50px;">
-                        <p class="number-stat">3,619</p>
+                        <p class="number-stat">{{ $sales }}</p>
                         <p class="desc-stat">Unidades Vendidas</p>
                         </div>
                         <div class="stat col-xs-4">
-                        <p class="number-stat">42</p>
+                        <p class="number-stat">{{ $products }}</p>
                         <p class="desc-stat">Publicaciones</p>
                         </div>
                     </div>

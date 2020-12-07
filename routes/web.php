@@ -39,7 +39,7 @@ Route::get('/paypal/status', [PaymentController::class,'payPalStatus'] )->name('
 
 
 //producto
-Route::resource('dashboard/product', ProductController::class)->middleware('auth');;
+Route::resource('dashboard/product', ProductController::class)->middleware('auth');
 Route::post('dashboard/{product}/image',[ProductController::class,'image'])->name('product.image');
 //Perfil
 Route::get('/profile/{id}', [profileController::class, 'getPerfil' ]);
