@@ -84,8 +84,8 @@ Jhon Edison Rosero
     3)Ninguno
 Yoiner Lopez:
     1) Agregue vistas sin estilos de pqr
-    2) Agregar roles
-    3) Manejar roles
+    2) Agregar roles y reports excel, pdf
+    3) Manejar la libreria laravel-excel
 Jhon Edison Rosero
     1) Corregi la implementacion de Paypal, Guarde las compras de cada usuario y sus ventas
     2)Integrar la libreria de Socialite
@@ -97,9 +97,9 @@ Jhon Edison Rosero
     2)
     3)
     Yoiner Lopez:
-    1) se configuro de administrador y usuarios-vendedores los roles
-    2) 
-    3) 
+    1) se configuro de administrador y usuarios-vendedores los roles y se termino reportes excel
+    2) Se termino reportes pdf
+    3)  
     Jhon Edison Rosero
     1) integre socialite
     2) 
