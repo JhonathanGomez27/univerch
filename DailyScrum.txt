@@ -72,6 +72,10 @@ Yoiner Lopez:
     1) Configure modelo y y controlador de pqr
     2) Agreguar lo minimo de las vistas de pqr
     3) Ninguno
+Jhon Edison Rosero
+    1) Integre el Sdk de paypal
+    2) Mejorar la funcionalidad de Paypal,corregir fallos, implementar las compras
+    3) ninguno
 
  06/12/2020
     Jhonathan Gomez
@@ -82,7 +86,10 @@ Yoiner Lopez:
     1) Agregue vistas sin estilos de pqr
     2) Agregar roles
     3) Manejar roles
-
+Jhon Edison Rosero
+    1) Corregi la implementacion de Paypal, Guarde las compras de cada usuario y sus ventas
+    2)Integrar la libreria de Socialite
+    3) ninguno
 
  07/12/2020
     Jhonathan Gomez
@@ -93,4 +100,7 @@ Yoiner Lopez:
     1) se configuro de administrador y usuarios-vendedores los roles
     2) 
     3) 
-
+    Jhon Edison Rosero
+    1) integre socialite
+    2) 
+    3) 
